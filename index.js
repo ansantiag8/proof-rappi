@@ -7,15 +7,15 @@ let aux1N = n
 let matrix = []
 
 let makeMatrix = () => {
-  for (; aux1N >= 0; aux1N--) {
+  for (; aux1N > 0; aux1N--) {
     let aux2N = n
 
     matrix.unshift([])
-    for (; aux2N >= 0; aux2N--) {
+    for (; aux2N > 0; aux2N--) {
       let aux3N = n
 
       matrix[0].unshift([])
-      for (; aux3N >= 0; aux3N--) {
+      for (; aux3N > 0; aux3N--) {
         matrix[0][0].unshift(0)
         // matrix[0][0].unshift(`${aux1N}-${aux2N}-${aux3N}`)
       }
@@ -79,9 +79,9 @@ let readO = () => {
     switch (operation) {
       case 'update':
         if (data.length === 5) {
-          let x = parseInt(data[1], 10)
-          let y = parseInt(data[2], 10)
-          let z = parseInt(data[3], 10)
+          let x = parseInt(data[1], 10) - 1
+          let y = parseInt(data[2], 10) - 1
+          let z = parseInt(data[3], 10) - 1
           let w = parseInt(data[4], 10)
 
           if (!isNaN(x) &&
@@ -90,7 +90,6 @@ let readO = () => {
           !isNaN(w)) {
             if (x <= n && y <= n && z <= n) {
               matrix[x][y][z] = w
-              console.log(matrix)
             } else {
               console.log(`los tres primeros numeros deben de ser menor a n "${n}"`)
               readO()
