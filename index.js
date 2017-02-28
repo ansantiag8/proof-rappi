@@ -130,11 +130,11 @@ let readO = () => {
               for (; j < n; j++) {
                 let k = z1
 
-                if (j > y2) {
+                if (i > x2 && j > y2) {
                   break
                 }
                 for (; k < n; k++) {
-                  if (k > z2) {
+                  if (i > x2 && j > y2 && k > z2) {
                     break
                   }
                   sum = sum + matrix[i][j][k]
